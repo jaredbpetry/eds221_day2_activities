@@ -9,22 +9,67 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+```{r}
+vec_1 <- c(2, 5, 9, 10, 8, 12, 1, 0)
+class(vec_1)
+typeof(vec_1)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+#----refer to element 3 of the vector and store it 
+vec_1_e3 <- vec_1[3]
+vec_1_e3
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+#-----same thing with the first element 
+vec_1_e1 <- vec_1[1]
+vec_1_e1
 
-```{r cars}
-summary(cars)
+#-----now with elements 5 through 7
+vec_1_e5to7 <- vec_1[5:7]
+vec_1_e5to7
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+#-----re-assign vec_1 as a character vector 
+vec_1_char <- as.character(vec_1)
+vec_1_char
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Create a vector called vec_2
+vec_2 should contained named elements, where town = "Santa Barbara, location = "Rincon", swell = "south"
+
+```{r}
+vec_2 <- c(town = "santa barbara", location = "rincon", swell = "south")
+vec_2
+
+class(vec_2)
+length(vec_2)
+
+#-----access the second element by name  **come back to this
+
+vec_2_2 <- vec_2[2]
+vec_2_2
+```
+
+Write code to create a data frame called df_1 that looks like this:
+
+   region     species count
+ 1      A       otter    12
+ 2      B great white     2
+ 3      A    sea lion    36
+ 4      D  gray whale     6
+
+```{r}
+df_1 <- data.frame(region = c("A", "B", "C", "D"), species = c("otter", "great white", "sea lion", "gray whale"), count = c(12, 2, 36, 6))
+
+df_1
+
+class(df_1)
+
+#explore class of species column 
+class(df_1[,2])
+
+max_count <- max(df_1[,3])
+max_count
+```
+
+
+
